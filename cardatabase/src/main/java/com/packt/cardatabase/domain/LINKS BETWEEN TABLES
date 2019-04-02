@@ -1,0 +1,38 @@
+###############################################################################
+
+MANY TO MANY LINK BETWEEN CAR TABLE AND OWNER TABLE
+
+// CAR CLASS
+@ManyToMany(mappedBy = "cars")
+
+private Set<Owner> owners;
+
+public Set<Owner> getOwners() {
+    return owners;
+}
+
+public void setOwners(Set<Owner> owners) {
+    this.owners = owners;
+}
+
+
+//OWNER CLASS
+
+@ManyToMany(cascade = CascadeType.MERGE)
+@JoinTable(name = "car_owner", joinColumns = { @JoinColumn(name =
+"ownerid") }, inverseJoinColumns = { @JoinColumn(name = "id") })
+
+private Set<Car> cars = new HashSet<Car>(0);
+
+public Set<Car> getCars() {
+    return cars;
+}
+public void setCars(Set<Car> cars) {
+    this.cars = cars;
+}
+
+// RECOMMENDATION
+In a many-to-many relationship, it is recommended using Set instead of List with hibernate
+
+###############################################################################
+
