@@ -14,7 +14,7 @@ public interface CarRepository extends CrudRepository <Car, Long>{
     // List<Car> findByYear(int year);
     // Fetch cars by brand using SQL
     // @Query("select c from Car c where c.brand = ?1")
-    // List<Car> findByBrand(String brand);
+    List<Car> findByBrand(String brand);
 }
 
 
