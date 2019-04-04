@@ -1,5 +1,7 @@
 package com.packt.cardatabase.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,8 +13,10 @@ public class Owner {
     private long ownerid;
     private String firstname, lastname;
 
+    // JsonIgnore need to avoid infinite loop
     // One to many link with Car table
     @OneToMany(cascade = CascadeType.ALL, mappedBy="owner")
+    @JsonIgnore
     private List<Car> cars;
 
     public Owner(){}

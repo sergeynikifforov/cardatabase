@@ -9,12 +9,12 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface CarRepository extends CrudRepository <Car, Long>{
     // Fetch cars by brand
-    List<Car> findByColor(String color);
+    // List<Car> findByColor(String color);
     // Fetch cars by year
-    List<Car> findByYear(int year);
+    // List<Car> findByYear(int year);
     // Fetch cars by brand using SQL
-    @Query("select c from Car c where c.brand = ?1")
-    List<Car> findByBrand(String brand);
+    // @Query("select c from Car c where c.brand = ?1")
+    // List<Car> findByBrand(String brand);
 }
 
 

@@ -1,5 +1,7 @@
 package com.packt.cardatabase.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 
@@ -13,6 +15,7 @@ public class Car {
     private int year, price;
     // Many to one link with Owner table
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     @JoinColumn(name = "owner")
     private Owner owner;
 
