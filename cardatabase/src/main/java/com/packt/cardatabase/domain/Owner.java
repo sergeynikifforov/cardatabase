@@ -41,7 +41,7 @@ public class Owner {
     public String getLastname(){
         return lastname;
     }
-    public void setLastname(){
+    public void setLastname(String lastname){
         this.lastname = lastname;
     }
 }
