@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
-public interface CarRepository extends CrudRepository <Car, Long>{
+public interface CarRepository extends CrudRepository<Car, Long> {
     // Fetch cars by brand
     // List<Car> findByColor(String color);
     // Fetch cars by year
@@ -20,6 +20,7 @@ public interface CarRepository extends CrudRepository <Car, Long>{
     // Another variant
     // Fetch cars by brand
     List<Car> findByBrand(@Param("brand") String brand);
+
     // Fetch cars by color
     List<Car> findByColor(@Param("color") String color);
 
